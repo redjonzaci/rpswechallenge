@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-rpswechallenge-dev-a59cb-unauthRole",
       "StackName": "amplify-rpswechallenge-dev-a59cb",
       "StackId": "arn:aws:cloudformation:eu-central-1:836283961924:stack/amplify-rpswechallenge-dev-a59cb/89ff0670-3344-11f0-9c8e-02c7a54c92c7",
-      "AmplifyAppId": "d1bfj3kp3k054h"
+      "AmplifyAppId": "d1bfj3kp3k054h",
+      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-rpswechallenge-dev-a59cb-deployment/amplify-cfn-templates/networkingStackTemplate.json"
     },
     "categories": {
       "hosting": {
@@ -17,6 +18,9 @@
           "appId": "d1bfj3kp3k054h",
           "type": "manual"
         }
+      },
+      "api": {
+        "orderpackscalculator": {}
       }
     }
   }
