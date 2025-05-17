@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rpswechallenge-dev-a59cb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::836283961924:role/amplify-rpswechallenge-dev-a59cb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::836283961924:role/amplify-rpswechallenge-dev-a59cb-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-rpswechallenge-dev-a59cb-deployment",
+      "UnauthRoleName": "amplify-rpswechallenge-dev-a59cb-unauthRole",
+      "StackName": "amplify-rpswechallenge-dev-a59cb",
+      "StackId": "arn:aws:cloudformation:eu-central-1:836283961924:stack/amplify-rpswechallenge-dev-a59cb/89ff0670-3344-11f0-9c8e-02c7a54c92c7",
+      "AmplifyAppId": "d1bfj3kp3k054h"
+    }
+  }
+}
