@@ -128,47 +128,17 @@
                 "",
                 [
                   {
-                    "Fn::Select": [
-                      4,
-                      {
-                        "Fn::Split": [
-                          ":",
-                          {
-                            "Fn::GetAtt": [
-                              "apiRepository",
-                              "Arn"
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "Ref": "AWS::AccountId"
                   },
                   ".dkr.ecr.",
                   {
-                    "Fn::Select": [
-                      3,
-                      {
-                        "Fn::Split": [
-                          ":",
-                          {
-                            "Fn::GetAtt": [
-                              "apiRepository",
-                              "Arn"
-                            ]
-                          }
-                        ]
-                      }
-                    ]
+                    "Ref": "AWS::Region"
                   },
                   ".",
                   {
                     "Ref": "AWS::URLSuffix"
                   },
-                  "/",
-                  {
-                    "Ref": "apiRepository"
-                  },
-                  ":latest"
+                  "/amplify-rpswechallenge-dev-a59cb-api-orderpackscalculator-api:latest"
                 ]
               ]
             },
@@ -254,9 +224,23 @@
               ],
               "Effect": "Allow",
               "Resource": {
-                "Fn::GetAtt": [
-                  "apiRepository",
-                  "Arn"
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":repository/amplify-rpswechallenge-dev-a59cb-api-orderpackscalculator-api"
+                  ]
                 ]
               }
             },
@@ -327,27 +311,6 @@
       "UpdateReplacePolicy": "Delete",
       "DeletionPolicy": "Delete"
     },
-    "apiRepository": {
-      "Type": "AWS::ECR::Repository",
-      "Properties": {
-        "LifecyclePolicy": {
-          "LifecyclePolicyText": "{\"rules\":[{\"rulePriority\":10,\"selection\":{\"tagStatus\":\"tagged\",\"tagPrefixList\":[\"latest\"],\"countType\":\"imageCountMoreThan\",\"countNumber\":1},\"action\":{\"type\":\"expire\"}},{\"rulePriority\":100,\"selection\":{\"tagStatus\":\"any\",\"countType\":\"sinceImagePushed\",\"countNumber\":7,\"countUnit\":\"days\"},\"action\":{\"type\":\"expire\"}}]}"
-        },
-        "RepositoryName": {
-          "Fn::Join": [
-            "",
-            [
-              {
-                "Ref": "rootStackName"
-              },
-              "-api-orderpackscalculator-api"
-            ]
-          ]
-        }
-      },
-      "UpdateReplacePolicy": "Retain",
-      "DeletionPolicy": "Retain"
-    },
     "ServiceSG": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
@@ -380,7 +343,7 @@
         "Cluster": {
           "Ref": "NetworkStackClusterName"
         },
-        "DesiredCount": 0,
+        "DesiredCount": 1,
         "LaunchType": "FARGATE",
         "NetworkConfiguration": {
           "AwsvpcConfiguration": {
@@ -1053,47 +1016,17 @@
                         },
                         "\"},{\"name\":\"api_REPOSITORY_URI\",\"type\":\"PLAINTEXT\",\"value\":\"",
                         {
-                          "Fn::Select": [
-                            4,
-                            {
-                              "Fn::Split": [
-                                ":",
-                                {
-                                  "Fn::GetAtt": [
-                                    "apiRepository",
-                                    "Arn"
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
+                          "Ref": "AWS::AccountId"
                         },
                         ".dkr.ecr.",
                         {
-                          "Fn::Select": [
-                            3,
-                            {
-                              "Fn::Split": [
-                                ":",
-                                {
-                                  "Fn::GetAtt": [
-                                    "apiRepository",
-                                    "Arn"
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
+                          "Ref": "AWS::Region"
                         },
                         ".",
                         {
                           "Ref": "AWS::URLSuffix"
                         },
-                        "/",
-                        {
-                          "Ref": "apiRepository"
-                        },
-                        "\"}]"
+                        "/amplify-rpswechallenge-dev-a59cb-api-orderpackscalculator-api\"}]"
                       ]
                     ]
                   }
@@ -2637,6 +2570,5 @@
         "value": "nodejs20.x"
       }
     }
-  },
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"13.0.1\",\"stackType\":\"api-ElasticContainer\",\"metadata\":{\"whyContinueWithGen1\":\"Prefer not to answer\"}}"
+  }
 }
