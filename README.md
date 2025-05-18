@@ -30,7 +30,7 @@
       6. Do you want to restrict API access? n
    4. Download Go 1.24.3 from [https://go.dev/dl/](https://go.dev/dl/)
    5. [https://gin-gonic.com/en/docs/quickstart/](https://gin-gonic.com/en/docs/quickstart/)
-      1. “go mod init orderpackscalculatorapi” in amplify/backend/orderpackscalculatorapi/src instead of “go mod init gin”
+      1. “go mod init orderpackscalculator” in amplify/backend/orderpackscalculator/src instead of “go mod init gin”
       2. Skip steps 2-4
    6. [https://hub.docker.com/\_/golang](https://hub.docker.com/_/golang)
 
